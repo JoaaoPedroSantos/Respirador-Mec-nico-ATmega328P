@@ -635,13 +635,13 @@ ISR(PCINT2_vect)
      59a:	84 30       	cpi	r24, 0x04	; 4
      59c:	71 f4       	brne	.+28     	; 0x5ba <__vector_5+0x114>
 			cursor+= 1;
-     59e:	80 91 75 02 	lds	r24, 0x0275	; 0x800275 <cursor>
-     5a2:	8f 5f       	subi	r24, 0xFF	; 255
-			cursor = (cursor == 4) ? 5:cursor;
-     5a4:	84 30       	cpi	r24, 0x04	; 4
+     59e:	90 91 75 02 	lds	r25, 0x0275	; 0x800275 <cursor>
+     5a2:	9f 5f       	subi	r25, 0xFF	; 255
+			cursor = (cursor == 5) ? 4:cursor;
+     5a4:	95 30       	cpi	r25, 0x05	; 5
      5a6:	09 f4       	brne	.+2      	; 0x5aa <__vector_5+0x104>
-     5a8:	85 e0       	ldi	r24, 0x05	; 5
-     5aa:	80 93 75 02 	sts	0x0275, r24	; 0x800275 <cursor>
+     5a8:	98 2f       	mov	r25, r24
+     5aa:	90 93 75 02 	sts	0x0275, r25	; 0x800275 <cursor>
 		}
 		
 	}
@@ -658,7 +658,7 @@ ISR(PCINT2_vect)
 		cursor = (sel==0) ? 0:1;
      5b4:	10 92 75 02 	sts	0x0275, r1	; 0x800275 <cursor>
      5b8:	cb cf       	rjmp	.-106    	; 0x550 <__vector_5+0xaa>
-			cursor = (cursor == 4) ? 5:cursor;
+			cursor = (cursor == 5) ? 4:cursor;
 		}
 		
 	}

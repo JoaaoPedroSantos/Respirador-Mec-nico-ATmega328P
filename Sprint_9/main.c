@@ -276,7 +276,7 @@ ISR(PCINT2_vect)
 		
 		if(sel == 4){
 			cursor+= 1;
-			cursor = (cursor == 4) ? 5:cursor;
+			cursor = (cursor == 5) ? 4:cursor;
 		}
 		
 	}
